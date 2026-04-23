@@ -1,0 +1,19 @@
+{
+  "name": "SkillSwap",
+  "short_name": "SkillSwap",
+  "description": "Teach what you know. Learn what you want.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F8FAFC",
+  "theme_color": "#4F46E5",
+  "orientation": "portrait",
+  "categories": ["education", "lifestyle"],
+  "icons": [
+    {
+      "src": "/images/logo.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
