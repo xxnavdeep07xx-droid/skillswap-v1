@@ -10,3 +10,4 @@ upload/
 skills/
 examples/
 bun.lock
+tsconfig.tsbuildinfo
