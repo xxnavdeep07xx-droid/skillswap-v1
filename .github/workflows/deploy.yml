@@ -14,6 +14,9 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
+env:
+  DEPLOY_BASE_PATH: "/skillswap-v1"
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -35,13 +38,10 @@ jobs:
       - name: Fix asset paths for GitHub Pages
         run: |
           cd out
-          # Fix image/asset paths in ALL files (HTML + JS)
           find . -type f \( -name '*.html' -o -name '*.js' \) -exec sed -i \
             -e 's|"/images/|"/skillswap-v1/images/|g' \
             -e "s|'/images/|'/skillswap-v1/images/|g" \
-            -e 's|src="/images/|src="/skillswap-v1/images/|g' \
             -e 's|href="/manifest.json"|href="/skillswap-v1/manifest.json"|g' \
-            -e 's|href="/images/|href="/skillswap-v1/images/|g' \
             -e "s|url('/images/|url('/skillswap-v1/images/|g" \
             -e "s|url(&#x27;/images/|url(&#x27;/skillswap-v1/images/|g" \
             {} +

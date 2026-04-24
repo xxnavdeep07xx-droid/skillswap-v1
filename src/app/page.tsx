@@ -15,7 +15,6 @@ import { ChatRoom } from '@/components/chat/ChatRoom';
 import { LeaderboardSection } from '@/components/leaderboard/LeaderboardSection';
 import { ProfileSection } from '@/components/profile/ProfileSection';
 import { SPWalletPage } from '@/components/profile/SPWalletPage';
-import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Home() {
   const {
@@ -99,18 +98,9 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen bg-background">
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={`${activeTab}-${topView?.id ?? 'base'}`}
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -8 }}
-          transition={{ duration: 0.2 }}
-          className="pb-24"
-        >
-          {renderTabContent()}
-        </motion.div>
-      </AnimatePresence>
+      <div key={`${activeTab}-${topView?.id ?? 'base'}`} className="pb-24">
+        {renderTabContent()}
+      </div>
       <BottomNav />
     </div>
   );
